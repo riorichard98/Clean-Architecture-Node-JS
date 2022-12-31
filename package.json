@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mongoose": "^6.8.2",
+    "pg": "^8.8.0"
+  }
+}
