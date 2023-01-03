@@ -7,7 +7,7 @@ module.exports = class Mongo {
         this.#mongoUri = mongoUri
     }
 
-    mongoose() {
+    mongooseSetup() {
         mongoose.set('debug', (collectionName, method, query, doc) => {
             console.log(`${collectionName}.${method}`, JSON.stringify(query), doc)
         })
