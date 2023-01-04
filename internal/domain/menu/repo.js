@@ -2,14 +2,22 @@ import Sql from './sql'
 
 export default class MenuRepo{
     #db
-    #findAllSql
+    #Sql
     constructor(db){
         this.#db = db
-        this.#findAllSql = new Sql()
+        this.#Sql = new Sql()
     }
 
     async getAllMenu(){
-        const menus = await this.#db.query(this.#findAllSql.getAllMenu)
+        const menus = await this.#db.query(this.#Sql.getAllMenu)
         return menus
+    }
+
+    async getMenuById(id){
+        const sql = this.#Sql.getMenuById
+        sql.values = [id]
+        const menu = await this.#db.query(sql)
+        if(!menu.length) return false
+        return menu[0]
     }
 }

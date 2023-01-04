@@ -1,3 +1,5 @@
+import Utils from "./pkg/utils/utils"
+
 class Sandbox{
     constructor(){
         this.test = "Rio"
@@ -8,6 +10,5 @@ class Sandbox{
 // const test = new Sandbox
 // console.log(test.rio);
 // test.testFunc
-import test from './sandbox2.js'
 
-test()
+console.log(Utils)
