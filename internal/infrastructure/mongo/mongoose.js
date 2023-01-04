@@ -1,7 +1,7 @@
-const { Mongoose } = require('mongoose')
+import { Mongoose } from "mongoose"
 const mongoose = new Mongoose()
 
-module.exports = class Mongo {
+export default class Mongo {
     #mongoUri
     constructor(mongoUri) {
         this.#mongoUri = mongoUri

@@ -5,7 +5,9 @@ class Sandbox{
     }
 }
 
-const test = new Sandbox
+// const test = new Sandbox
 // console.log(test.rio);
 // test.testFunc
-console.log();
+import test from './sandbox2.js'
+
+test()

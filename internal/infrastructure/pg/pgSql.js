@@ -1,6 +1,6 @@
-const { Pool } = require('pg')
+import { Pool } from 'pg'
 
-module.exports = class PgSql {
+export default class PgSql {
     #pool
     constructor(config) {
         this.#pool = new Pool({

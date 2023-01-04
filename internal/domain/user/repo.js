@@ -1,6 +1,6 @@
-const userKeys = require('./schema')
+import userKeys from './schema'
 
-module.exports = class UserRepo{
+export default class UserRepo{
     #db
     #setupDomain()
     #User

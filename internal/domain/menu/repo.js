@@ -1,6 +1,6 @@
-const Sql = require('./sql')
+import Sql from './sql'
 
-module.exports = class MenuRepo{
+export default class MenuRepo{
     #db
     #findAllSql
     constructor(db){

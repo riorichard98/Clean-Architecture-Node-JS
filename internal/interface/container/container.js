@@ -3,7 +3,7 @@ const Mongo = require('../../infrastructure/mongo/mongoose')
 const MenuRepo = require('../../domain/menu/repo')
 const UserRepo = require('../../domain/user/repo')
 
-module.exports = class Container{
+class Container{
     constructor(){
         this.pgDb = new PgSql({
             dbUser : process.env.USER,
@@ -17,3 +17,5 @@ module.exports = class Container{
         this.UserRepo = new UserRepo(this.UserRepo)
     }
 }
+
+export{Container}
