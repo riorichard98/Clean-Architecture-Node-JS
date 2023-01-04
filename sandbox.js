@@ -1,4 +1,4 @@
-import Utils from "./pkg/utils/utils"
+// import Utils from "./pkg/utils/utils"
 
 class Sandbox{
     constructor(){
@@ -11,4 +11,4 @@ class Sandbox{
 // console.log(test.rio);
 // test.testFunc
 
-console.log(Utils)
+// console.log(Utils)
