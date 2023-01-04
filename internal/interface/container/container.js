@@ -1,7 +1,7 @@
-const PgSql = require('../../infrastructure/pg/pgSql')
-const Mongo = require('../../infrastructure/mongo/mongoose')
-const MenuRepo = require('../../domain/menu/repo')
-const UserRepo = require('../../domain/user/repo')
+import PgSql from '../../infrastructure/pg/pgSql'
+import Mongo from '../../infrastructure/mongo/mongoose'
+import MenuRepo from '../../domain/menu/repo'
+import UserRepo from '../../domain/user/repo'
 
 class Container{
     constructor(){
