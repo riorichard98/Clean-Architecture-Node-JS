@@ -3,7 +3,7 @@ import Mongo from '../../infrastructure/mongo/mongoose'
 import MenuRepo from '../../domain/menu/repo'
 import UserRepo from '../../domain/user/repo'
 
-class Container{
+export default class Container{
     constructor(){
         this.pgDb = new PgSql({
             dbUser : process.env.USER,
@@ -17,5 +17,3 @@ class Container{
         this.UserRepo = new UserRepo(this.UserRepo)
     }
 }
-
-export{Container}
