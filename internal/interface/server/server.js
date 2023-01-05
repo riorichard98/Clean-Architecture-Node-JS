@@ -1,12 +1,12 @@
-import  express  from "express";
-import Container from "../container/container";
-import MenuHandler from "./handler/menuHandler";
+import HttpServer from "./http/httpServer.js";
 
-const router = express.Router()
+export default class Server{
+    #httpServer
+    constructor(container){
+        this.#httpServer = new HttpServer(container)
+    }
 
-const container = new Container()
-const menuHandler = new MenuHandler(container)
-
-router.post('/menu/order',menuHandler.OrderMenu)
-
-export default router
+    startService(){
+        this.#httpServer.startHtppService()
+    }
+}

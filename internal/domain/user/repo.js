@@ -1,15 +1,14 @@
-import userKeys from './schema'
+import userKeys from './schema.js'
 
 export default class UserRepo{
     #db
-    #setupDomain()
-    #User
+    #user
     constructor(db){
         this.#db = db
-        this.#User = this.#setupDomain()
+        this.#user = this.setupDomain()
     }
 
-    #setupDomain(){
+    setupDomain(){
         const mongoose = this.#db.mongooseSetup()
         const Schema = mongoose.Schema
         const UserSchema = new Schema(userKeys)
@@ -18,7 +17,7 @@ export default class UserRepo{
     }
 
     async createUser(data){
-        const user = new this.#User(data)
+        const user = new this.#user(data)
         const result = await user.save()
         return result
     }

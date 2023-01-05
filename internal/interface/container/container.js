@@ -1,9 +1,9 @@
-import PgSql from '../../infrastructure/pg/pgSql'
-import Mongo from '../../infrastructure/mongo/mongoose'
-import MenuRepo from '../../domain/menu/repo'
-import UserRepo from '../../domain/user/repo'
-import MenuService from '../usecase/menu'
-import Utils from '../../../pkg/utils/utils'
+import PgSql from '../../infrastructure/pg/pgSql.js'
+import Mongo from '../../infrastructure/mongo/mongoose.js'
+import MenuRepo from '../../domain/menu/repo.js'
+import UserRepo from '../../domain/user/repo.js'
+import MenuService from '../usecase/menu.js'
+import Utils from '../../../pkg/utils/utils.js'
 
 export default class Container{
     #MenuRepo
@@ -22,7 +22,7 @@ export default class Container{
 
         // repositories
         this.#MenuRepo = new MenuRepo(this.pgDb)
-        this.#UserRepo = new UserRepo(this.UserRepo)
+        this.#UserRepo = new UserRepo(this.mongoDb)
 
         // helper,utils,etc
         this.#helper = new Utils()
