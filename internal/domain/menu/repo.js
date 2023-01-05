@@ -10,14 +10,14 @@ export default class MenuRepo{
 
     async getAllMenu(){
         const menus = await this.#db.query(this.#Sql.getAllMenu)
-        return menus
+        return menus.rows
     }
 
     async getMenuById(id){
         const sql = this.#Sql.getMenuById
         sql.values = [id]
         const menu = await this.#db.query(sql)
-        if(!menu.length) return false
-        return menu[0]
+        if(!menu.rows.length) return false
+        return menu.rows[0]
     }
 }

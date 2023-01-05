@@ -2,6 +2,9 @@ export default class MenuHandler{
     #container
     constructor(container){
         this.#container = container
+        
+        // need to bind first
+        this.OrderMenu = this.OrderMenu.bind(this)
     }
 
     async OrderMenu(req,res,next){

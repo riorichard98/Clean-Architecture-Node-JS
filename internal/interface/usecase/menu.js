@@ -9,6 +9,7 @@ export default class MenuService{
     }
 
     async orderMenu(data){
+        if(!data) return this.#response(200,"invalid body request","0210")
         if(!data.name) return this.#response(200,"please input your name","0210")
         if(!data.menuId) return this.#response(200,"please input your menu id","0210")
         const found = await this.#menuRepo.getMenuById(data.menuId)
